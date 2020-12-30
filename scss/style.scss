@@ -1,0 +1,688 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+.clearfix {
+  overflow: auto;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button:hover,
+button:active,
+button:focus,
+input:hover,
+input:active,
+input:focus,
+*:hover,
+*:active,
+*:focus {
+  outline: none;
+}
+@font-face {
+  font-family: "IRANSans";
+  src: url("../font/IRANSans-web.woff") format("woff"),
+    url("../font/IRANSans.ttf") format("truetype"),
+    url("../font/IRANSans.svg#IRANSans") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "IRANSans";
+  text-align: right;
+  direction: rtl;
+  // color: white;
+}
+
+///////////////////////////  Start
+
+.behran {
+  .wide_header {
+    height: 100vh;
+    position: relative;
+  }
+  .behran_container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 20px;
+
+    &.blue-cader {
+      padding-top: 70px;
+      padding-bottom: 40px;
+    }
+  }
+  .w100 {
+    width: 100%;
+  }
+  .video-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    video {
+      @media only screen and (max-width: 940px) {
+        display: none;
+      }
+    }
+  }
+  &_play{
+    width: 100px;
+    position: relative;
+    top: 27%;
+    height: 100px;
+    left: -50%;
+    @media only screen and (max-width: 700px) {
+      top: 12%;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+  }
+    .circle-1{
+      animation: spin 2s linear infinite;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 0;
+    top: -36px;
+    position: absolute;
+    left: 38px;
+
+    }
+    .circle-2{
+      animation: spin 2s linear infinite;
+      width: 70%;
+      height: 70%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid #f3f3f3;
+      border-radius: 50%;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: 0;
+    }
+
+    svg{
+      width: 20%;
+      fill: white;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+
+    }
+  }
+  &_header-mobile{
+    background-color: rgba(0, 0, 0, 0.836);
+    padding: 20px;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    z-index: 20;
+    li{
+      margin-bottom: 10px;
+      a{
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  &_register-btn {
+    background: #14438b;
+    padding: 15px 40px;
+    display: inline-block;
+    font-size: 13px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+
+    &.head {
+      @media only screen and (max-width: 800px) {
+        display: none;
+      }
+    }
+
+    &.white {
+      background: white;
+      color: #14438b;
+      margin-right: 50px;
+    }
+  }
+  .header {
+    text-align: right;
+    width: 100%;
+    padding: 30px 30px 0;
+    margin-bottom: 30px;
+    &_registration {
+      float: left;
+      width: 30%;
+      padding-top: 20px;
+      text-align: left;
+      .hamburger {
+        
+        height: 30px;
+        &_line {
+          width: 30px;
+          height: 3px;
+          display: inline-block;
+          background-color: white;
+          position: relative;
+
+          &:after {
+            content: "";
+            width: 30px;
+            height: 3px;
+            display: inline-block;
+            background-color: white;
+            top: 14px;
+            position: absolute;
+            left: 0;
+          }
+          &:before {
+            content: "";
+            width: 30px;
+            height: 3px;
+            display: inline-block;
+            background-color: white;
+            top: -14px;
+            position: absolute;
+            left: 0;
+          }
+          
+        }
+      }
+      .changed{
+        &.hamburger_line{
+          transform: translate3d(0, -6px, 0) rotate(45deg);
+          &:before {
+            opacity: 0;
+          }
+          &:after {
+            transform: translate3d(0, -15px, 0) rotate(-90deg);
+          }
+        }
+      }
+    }
+    &_items {
+      display: inline-block;
+      float: right;
+      width: 70%;
+      img {
+        vertical-align: middle;
+      }
+    }
+    &_item {
+      display: inline-block;
+      padding: 5px;
+      margin: 0 10px;
+      vertical-align: middle;
+      font-size: 14px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      @media only screen and (max-width: 940px) {
+        display: none;
+      }
+    }
+  }
+  .award-box {
+    background: #14438b;
+    display: inline-block;
+    float: right;
+    text-align: right;
+    padding: 15px;
+    padding-right: 50px;
+    color: white;
+    h3 {
+      margin-bottom: 10px;
+      font-size: 13px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+    @media only screen and (max-width: 940px) {
+      width: 90%;
+      margin: 0 auto;
+      display: block;
+      float: none;
+      text-align: center;
+    }
+  }
+  .bicycle {
+    position: absolute;
+    bottom: 0;
+    img {
+      width: 50%;
+      margin: 0 auto;
+      display: block;
+      @media only screen and (max-width: 700px) {
+        width: 90%;
+      }
+    }
+   
+  }
+  &_section-blue {
+    width: 100%;
+    background-image: url(../img/behran-pattern-10.png);
+    background-repeat: repeat;
+    background-color: #14438b;
+    padding-bottom: 40px;
+    color: white;
+    background-size: 150px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+  &_chaleng {
+    width: 40%;
+    font-size: 13px;
+    padding-right: 50px;
+    @media only screen and (max-width: 700px) {
+      width: 100%;
+    }
+    li {
+      margin-bottom: 15px;
+      &::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        background: white;
+        right: 34px;
+        transform: rotate(45deg);
+        z-index: 20;
+      }
+    }
+  }
+  &_section-three {
+    color: black;
+    padding: 70px 0;
+    @media only screen and (max-width: 940px) {
+      display: block;
+    }
+  }
+  &_mixes-txt {
+    float: left;
+    width: 50%;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    
+    @media only screen and (max-width: 900px) {
+    margin-top: 0;
+    }
+    h3,
+    p {
+      margin-bottom: 20px;
+    }
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+      float: none;
+    }
+  }
+  &_mixes-img-wrapper {
+    float: right;
+    width: 50%;
+    img {
+      width: 85%;
+    }
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+      float: none;
+    }
+  }
+  .steps_img-wrapper {
+    float: left;
+    width: 50%;
+    img {
+      width: 100%;
+    }
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+    }
+  }
+  .steps_item {
+    margin-right: 60px;
+  }
+  .steps_discription {
+    display: inline-block;
+    width: 50%;
+    margin-bottom: 20px;
+    h4 {
+      margin-bottom: 20px;
+      margin-right: 60px;
+    }
+    li {
+      padding: 30px 0;
+    }
+    @media only screen and (max-width: 940px) {
+      width: 100%;
+    }
+  }
+  .steps_numbers {
+    width: 40px;
+    height: 40px;
+    padding-top: 7px;
+    color: #14438b;
+    background: white;
+    text-align: center;
+    float: right;
+    vertical-align: middle;
+    z-index: 20;
+    position: absolute;
+  }
+  &_section-reaction {
+    background: #f2f2fc;
+    color: #14438b;
+    text-align: center;
+    padding-top: 30px;
+    max-height: 300px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 800px;
+      height: 1px;
+      background: red;
+      right: 0;
+      bottom: -23px;
+      z-index: -5;
+      @media only screen and (max-width: 940px) {
+        display: none;
+      }
+    }
+
+    .behran_reaction-video {
+      transform: translateY(20px);
+      padding: 0 15px;
+      iframe {
+        @media only screen and (max-width: 600px) {
+          width: 100%;
+        }
+      }
+    }
+    .img-wrapper {
+      width: 40px;
+      display: inline-block;
+      margin-bottom: 5px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .hide {
+    display: none;
+    &.hamburger {
+      @media only screen and (max-width: 940px) {
+        display: inline-block;
+      }
+    }
+    &.behran_back {
+      @media only screen and (max-width: 940px) {
+        display: block;
+      }
+    }
+  }
+  &_join {
+    text-align: center;
+    color: #14438b;
+    padding-top: 190px;
+    padding-bottom: 70px;
+    max-width: 490px;
+    margin: 0 auto;
+  }
+
+  .join_form {
+    padding: 0 20px;
+    .wrapper {
+      text-align: right;
+      @media only screen and (max-width: 700px) {
+        text-align: center;
+      }
+    }
+  }
+  .join_head {
+    padding-bottom: 80px;
+  }
+  .join_tab {
+    padding: 20 0px;
+    margin: 0 auto;
+    display: inline-block;
+    .active {
+      border-bottom: solid 3px red;
+      color: #14438b;
+    }
+    span {
+      padding: 20px;
+      border-bottom: solid 3px rgb(146, 146, 146);
+      color: gray;
+      float: right;
+      margin-bottom: 30px;
+
+      @media only screen and (max-width: 700px) {
+        padding: 20px 5px;
+        font-size: 13px;
+      }
+    }
+  }
+  .join_floor {
+    text-align: right;
+    margin-bottom: 10px;
+
+    &.half {
+      width: 50%;
+      float: right;
+    }
+  }
+  .join_input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 2px rgb(226, 226, 226);
+    &.plaque {
+      float: right;
+      width: 102px;
+      height: 96px;
+      border: none;
+      border-left: solid 2px rgb(199, 196, 196);
+      margin-top: 1px;
+      border-radius: 0;
+      text-align: center;
+      width: calc(25% - 10px);
+
+      &:first-child {
+        border: solid 2px black;
+      }
+    }
+  }
+  .join_title {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .join_plaque-box {
+    background-image: url(../img/plate.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 98px;
+    margin-bottom: 50px;
+  }
+  .red-line {
+    width: 3px;
+    position: absolute;
+    background: red;
+    z-index: 10;
+    top: 155px;
+    height: 648px;
+    right: 40px;
+    @media only screen and (max-width: 940px) {
+      display: none;
+    }
+    &.second {
+      top: 0;
+      height: 500px;
+    }
+    &.third {
+      top: 0;
+      height: 560px;
+      right: 38px;
+    }
+  }
+  .chalenge_title {
+    margin-right: 50px;
+    display: inline-block;
+    @media only screen and (max-width: 940px) {
+      border-bottom: solid 2px red;
+      padding-bottom: 10px;
+    }
+  }
+  &_footer {
+    background-color: #14438b;
+    padding: 40px;
+    color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .footer_right {
+      float: right;
+      width: 50%;
+      @media only screen and (max-width: 940px) {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    .footer_left {
+      float: left;
+      width: 50%;
+      text-align: center;
+      h3 {
+        &::after {
+          content: "";
+          width: 33px;
+          height: 2px;
+          background: red;
+          display: inline-block;
+        }
+      }
+      a {
+        display: block;
+        width: 25px;
+        svg {
+          width: 100%;
+        }
+      }
+      @media only screen and (max-width: 940px) {
+        width: 100%;
+      }
+    }
+    .footer_col {
+      width: 32%;
+      float: right;
+      li {
+        font-size: 13px;
+        margin-bottom: 10px;
+        &:first-child {
+          font-size: 15px;
+          padding: 10px 0;
+          line-height: 3;
+          &::after {
+            content: "";
+            width: 33px;
+            height: 2px;
+            background: red;
+            display: block;
+          }
+        }
+      }
+      @media only screen and (max-width: 700px) {
+        width: 100%;
+      }
+    }
+    .footer_buttons {
+      padding: 20px 0;
+      a {
+        padding: 10px 20px;
+        width: 175px;
+        display: inline-block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+      }
+      .red {
+        background-color: #ff0000;
+      }
+      .yellow {
+        background-color: #fea110;
+      }
+      .white {
+        background-color: white;
+        color: #14438b;
+      }
+    }
+    .footer_social {
+      padding-top: 25px;
+      border-top: solid 1px gray;
+      .footer_left {
+        a {
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          border: solid 1px #fff0f0;
+          position: relative;
+          background: white;
+
+          img {
+            width: 80%;
+            position: absolute;
+            left: 0;
+            right: 3px;
+            top: 2px;
+            bottom: 0;
+            transform: translateY(1%);
+            &.insta{
+              padding-top: 5px;
+            }
+          }
+        }
+        span{
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  .behran_apps {
+    padding: 20px 0;
+    border-bottom: solid 1px rgb(33, 33, 150);
+    a {
+      display: inline-block;
+      width: 175px;
+      img {
+        width: 100%;
+        height: 60px;
+      }
+    }
+  }
+  .show{
+    display: block;
+  }
+}
